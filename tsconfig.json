@@ -16,8 +16,11 @@
     "incremental": true,
     "paths": {
       "@/components/*": ["components/*"],
+      "@components/*": ["components/*"],
       "@/app/*": ["app/*"],
-      "@/content/*": ["content/*"]
+      "@app/*": ["app/*"],
+      "@/content/*": ["content/*"],
+      "@content/*": ["content/*"]
     }
   },
   "include": [
