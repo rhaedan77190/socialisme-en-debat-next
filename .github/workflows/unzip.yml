@@ -1,0 +1,32 @@
+name: Unzip and commit project
+
+on:
+  push:
+    paths:
+      - 'socialisme-en-debat.zip'
+  workflow_dispatch:
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: Install unzip
+        run: sudo apt-get update && sudo apt-get install -y unzip
+      - name: Unzip project
+        run: |
+          unzip socialisme-en-debat.zip
+          mv socialisme-en-debat/* .
+          rm -rf socialisme-en-debat
+          rm socialisme-en-debat.zip
+      - name: Commit unzipped files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -A
+          git commit -m "Unzip project and remove archive" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
