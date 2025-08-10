@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round">
+  <!-- Livre stylisé -->
+  <path d="M10 30 V80 Q25 70 50 80 Q75 70 90 80 V30 Q75 20 50 30 Q25 20 10 30 Z" />
+  <!-- Rayons indiquant la diffusion du savoir -->
+  <path d="M20 20 L50 10 L80 20" />
+  <path d="M20 15 L50 5 L80 15" stroke-width="4" />
+</svg>

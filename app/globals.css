@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Variables définissant la palette par défaut. Le mode sombre est activé via l'attribut
+  `data-theme="dark"` appliqué sur l'élément <html> par next-themes. Les couleurs
+  peuvent être ajustées dans le fichier tailwind.config.ts.
+*/
+:root {
+  --color-primary: #a11a1a;
+  --color-accent: #e5a36f;
+  --color-muted: #f5f0e6;
+  --color-background: #ffffff;
+  --color-foreground: #141414;
+}
+
+[data-theme='dark'] {
+  --color-background: #141414;
+  --color-foreground: #f5f0e6;
+  --color-muted: #2a2a2a;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased bg-background text-foreground;
+}
+
+a {
+  @apply underline-offset-4 text-primary hover:underline;
+}
